@@ -51,6 +51,19 @@ Your `vagrant ssh` access has sudo privileges, so you can do whatever you like.
 
 Kibana, ElasticSearch, and logstash are homed in `/app`
 
+## Warn: First build or when rebuilding the machine takes time
+
+Downloading and installing rvm, ruby, gems, etc. takes time depending on your connection and machine speed.
+
+You can check where you are running:
+
+    vagrant ssh ps uww -ukibana
+
+You will eventually kibana on <http://localhost:5601/> when kibana.rb is running:
+
+    USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+    kibana   30651  0.2  1.9 118928 40640 ?        Sl   22:19   0:01 ruby kibana.rb
+
 ## Contributing
 
 Patches and ideas welcome!
